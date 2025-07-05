@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://powergamer-backend.up.railway.app';
 
 const TibiaTracker = () => {
   const [currentRanking, setCurrentRanking] = useState([]);
