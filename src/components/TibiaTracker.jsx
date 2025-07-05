@@ -86,7 +86,7 @@ const TibiaTracker = () => {
 
   const interval = setInterval(() => {
     fetchAllData();
-  }, 2 * 60 * 1000); // 5 minutos
+  }, 20 * 60 * 1000); // 5 minutos
 
   return () => clearInterval(interval); // Limpeza quando o componente desmonta
 }, []);
@@ -190,6 +190,17 @@ const TibiaTracker = () => {
                   Última atualização: {lastUpdate.toLocaleTimeString('pt-BR')}
                 </div>
               )}
+              <button
+                onClick={triggerManualScrape}
+                disabled={loading}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                  loading
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                }`}
+              >
+                {loading ? 'Atualizando...' : 'Atualizar Dados'}
+              </button>
             </div>
           </div>
         </div>
