@@ -9,7 +9,6 @@ Este é o **frontend React** do projeto **Tibia Tracker**, uma aplicação que e
 - 📈 Geração de gráficos (Recharts) de evolução e ganhos diários.
 - 🧾 Histórico detalhado de um player específico (últimos 14 dias).
 - 🔄 Scraping manual (com botão de "Atualizar Dados").
-- 🌐 Autoatualização a cada 20 minutos.
 
 ## 📦 Tecnologias Usadas
 
