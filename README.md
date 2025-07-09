@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# 🧙‍♂️ Tibia Tracker Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o **frontend React** do projeto **Tibia Tracker**, uma aplicação que exibe o ranking, ganhos diários e histórico de jogadores do servidor [Rexis - Souls of Elysium](https://rexis.soerpg.com). Ele consome dados da API FastAPI hospedada no Railway.
 
-## Available Scripts
+## 🚀 Funcionalidades
 
-In the project directory, you can run:
+- 📊 Exibe o ranking atual dos Top 20 players.
+- 🔼 Mostra os **ganhos de experiência e níveis** do dia.
+- 📈 Geração de gráficos (Recharts) de evolução e ganhos diários.
+- 🧾 Histórico detalhado de um player específico (últimos 14 dias).
+- 🔄 Scraping manual (com botão de "Atualizar Dados").
+- 🌐 Autoatualização a cada 20 minutos.
 
-### `npm start`
+## 📦 Tecnologias Usadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** (com hooks)
+- **Tailwind CSS** (interface moderna)
+- **Recharts** (gráficos interativos)
+- **Fetch API** (para comunicação com backend FastAPI)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Estrutura do Projeto
 
-### `npm test`
+```bash
+TibiaTracker.jsx         # Componente principal
+App.js / main.jsx        # Ponto de entrada (esperado)
+.env                     # Pode conter URL da API (opcional)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔗 Endpoints Consumidos
 
-### `npm run build`
+O componente consome dados da seguinte API hospedada no Railway:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+https://powergamer-backend-production.up.railway.app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Exemplos de endpoints:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `/players/current` → Ranking atual
+- `/players/daily-gains` → Ganhos do dia
+- `/stats/top-gainers?days=7` → Farmers da semana
+- `/players/<name>/history` → Histórico do jogador
+- `/scrape/manual` → Scraping manual
 
-### `npm run eject`
+## ▶️ Como rodar localmente
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install         # Instala dependências
+npm start           # Inicia em http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Certifique-se de que o backend FastAPI esteja online (Railway ou local).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Requisitos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js 18+
+- Navegador moderno
+- Backend rodando ou acessível
 
-## Learn More
+## 📌 Observações
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Os dados são coletados automaticamente todos os dias às **00:01** pelo backend.
+- Você pode forçar a coleta clicando em "**Atualizar Dados**".
+- As tabs exibem diferentes seções: ranking, ganhos, farmers e histórico.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 Licença
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Disponível sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
